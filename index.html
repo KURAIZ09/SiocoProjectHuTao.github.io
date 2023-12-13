@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+		div {border:0px solid #FF0000;}
+	</style>
+	<script>
+		var x=0;
+		var y=0;
+		var size=0;
+		var rotation=0;
+		var transitiontimer;
+		var wingtimer;
+		var nexttimer;
+
+		function flutter(vartimer)
+		{
+			var wrapper=document.getElementById("butterfly_wrapper");
+
+			nexttimer=vartimer+(generaterandomno(-200,200));
+			nexttimer=(nexttimer<1500||nexttimer>3000?1500:nexttimer);
+
+			x+=generaterandomno(-80,80);
+			y+=generaterandomno(-80,80);
+
+			x=(x<20?30:x);
+			y=(y<20?30:y);
+			x=(x>250?240:x);
+			y=(y>250?240:y);
+
+			size+=generaterandomno(-10,10);
+			size=(size<10?20:size);
+			size=(size>50?40:size);
+
+			rotation+=generaterandomno(-10,10);
+			rotation=(rotation<-20?0:rotation);
+			rotation=(rotation>20?0:rotation);
+
+			transitiontimer=generaterandomno(20,50)/10;
+
+			wrapper.style.marginLeft=x+"px";
+			wrapper.style.marginTop=y+"px";
+			wrapper.style.width=size+"px";
+			wrapper.style.height=size+"px";
+			wrapper.style.transform="rotate("+rotation+"deg)";
+			wrapper.style.webkitTransform="rotate("+rotation+"deg)";		
+			wrapper.style.transition="all "+transitiontimer+"s";	
+			wrapper.style.webkitTransition="all "+transitiontimer+"s";
+
+			wingtimer=generaterandomno(1,5);
+			var upperwings=document.getElementsByClassName("upperwing");
+			var lowerwings=document.getElementsByClassName("lowerwing");
+
+			for (var k=0;k<=1;k++)
+			{
+				upperwings[k].style.animationDuration="0."+wingtimer+"s";
+				upperwings[k].style.webkitAnimationDuration="0."+wingtimer+"s";
+				lowerwings[k].style.animationDuration="0."+wingtimer+"s";
+				lowerwings[k].style.webkitAnimationDuration="0."+wingtimer+"s";		
+			}
+
+			setTimeout(function(){flutter(nexttimer);},vartimer);
+		}
+
+		function generaterandomno(varmin,varmax)
+		{
+			return Math.floor((Math.random() * (varmax-varmin+1)) + varmin);
+		}
+	</script>
+</head>
+
+<body onload="flutter(1500);">
+	<div id="butterfly_wrapper">
+		<div class="leftwings">
+			<div class="perspective">
+				<div class="upperwing upperwing_left">
+
+				</div>
+			</div>
+			<div class="perspective">
+				<div class="lowerwing lowerwing_left">
+
+				</div>
+			</div>
+		</div>
+		<div class="rightwings">
+			<div class="perspective">
+				<div class="upperwing upperwing_right">
+
+				</div>
+			</div>
+			<div class="perspective">
+				<div class="lowerwing lowerwing_right">
+
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIOCO | PROJECT</title>
+    <link rel="stylesheet" href="style.css">
+		<script>
+			function changeText() {
+					document.querySelector('.work').textContent = '>>>>>>BSIT-1F5<<<<<<';
+			}
+	
+			function restoreText() {
+					document.querySelector('.work').textContent = 'Genshin Impact Player';
+			}
+		</script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style type="text/css">body { cursor: url('data:image/x-icon;base64,AAACAAEAICAAAAAAAACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAMAAAADAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJAAAADAAAAA8AAAAIAAAABgAAAAMAAAABAAAAAQAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMAAAAcAAAAJQAAABwAAAAVAAAADwAAAAgAAAAGAAAAAwAAAAMAAAAGAAAACAAAAAUAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAHAAAAC8AAAA/AAAAOAAAAC8AAAAlAAAAHAAAABUAAAAPAAAADwAAABUAAAAcAAAAEwAAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAObv8v8AAAAlAAAAPgAAAE4AAABMAAAARQAAAD8AAAA4AAAALwAAACUAAAAlAAAALwAAADgAAAAlAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5u/y/0DM//9AzP//QMz//wAAAFMAAABRAAAATgAAAEwAAABFAAAAPwAAAD8AAABFAAAASQAAADAAAAAXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADm7/L/5u/y/wC7//8Au///QMz//0DM//9AzP//AAAAUwAAAFFAzP//QMz//0DM//8AAABKAAAALgAAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5u/y//r6+v/6+vr/5u/y/wC7//8Au///ALv//wC7//9AzP//QMz//wC7//8Au///ALv//wAAAEUAAAAoAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADm7/L/+vr6////////////ALv//wC7//8Au///ALv//wC7//8Au///ALv//wC7//8Au///AAAARQAAACgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAObv8v/6+vr/+vr6//////8Au///ALv//wC7//8Au///ALv//wC7//8Au///ALv//wAAAFUAAABMAAAAMAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5u/y//r6+v/6+vr//////wC7//8Au///ALv//wC7//8Au///ALv//wC7//8Au///AAAAVQAAAFIAAAA4AAAAHAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADm7/L/+vr6//r6+v//////ALv//wC7//8Au///ALv//wC7//8Au///ALv//wC7//9AzP//AAAAVAAAAEEAAAAlAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAObv8v/6+vr/+vr6/0DM//8Au///ALv//wC7//8Au///ALv//wC7//8Au///ALv//wC7//8AAABVAAAASwAAAC8AAAATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5u/y//r6+v/6+vr/ALv//+bv8v8Au///ALv//wC7//8Au///ALv//wC7//8Au///ALv//wAAAFQAAABQAAAANwAAABsAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAObv8v/6+vr/+vr6//r6+v8Au///+vr6//r6+v8Au///ALv//wC7//8Au///ALv//wC7//8Au///QMz//wAAAEwAAAA5AAAAIAAAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5u/y//r6+v/6+vr/+vr6/wC7//9AzP//QMz//wC2///m7/L/5u/y/+bv8v/m7/L/ALv//wC7//8Au///AAAAOAAAAC8AAAAcAAAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPm7/L/+vr6//r6+v/6+vr/5u/y/+bv8v/m7/L/5u/y//r6+v/6+vr/+vr6///////m7/L/5u/y/wC7//8AAAAcAAAAGQAAABAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACebv8v/6+vr/+vr6//r6+v/6+vr/+vr6//r6+v/6+vr/+vr6//r6+v/6+vr/+vr6//r6+v//////5u/y//r6+v8AAAAIAAAABQAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADm7/L/+vr6//r6+v/6+vr/+vr6//r6+v/6+vr/+vr6//r6+v/6+vr/+vr6//r6+v/6+vr/AAAACAAAAAYAAAADAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAObv8v/6+vr/+vr6//r6+v/6+vr/+vr6//r6+v8AAAAIAAAABgAAAAMAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADm7/L/+vr6//r6+v/6+vr/AAAADwAAAAYAAAADAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAObv8v/6+vr/AAAABQAAAAYAAAADAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///////////////////////////////////////////////////////////////////////////3////8P////AY///gAP//4AD//+AB///gAf//4AD//+AA///gAP//wAB//8AAf//AAH//wAA//4AD//+A////D////z////8='), auto; }</style>
+</head>
+<body>
+    <div class="container" id="home">
+        <header>
+            <nav>
+                <div class="left-nav">
+                    <a class="home1" href="#home" >Home</a>
+                    <a class="home1" href="#about">About</a>
+                    <a class="home1" href="#experience">Experience</a>
+                    <a class="home1" href="#contact">Contact</a>
+                </div>
+                <div class="mid-nav">
+                    <a class="you" href="https://youtube.com" target="_blank">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                    <a class="you" href="https://instagram.com" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a class="you" href="https://www.tiktok.com/" target="_blank">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </a>
+                </div>
+                <div class="right-nav">
+                    <a href="#footer">
+                        <img src="https://upload-os-bbs.hoyolab.com/upload/2021/07/29/33019925/ff4c2fb02895c8e9ef080391bcac260b_6439594130182473016.gif" alt="Photo of Hutao">
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <section>
+            <div class="mid-info">
+                <div class="name">SIOCO JARIB<br>
+                    <span>HUTAO MAIN</span>
+                </div>
+								<div class="work" onmouseover="changeText()" onmouseout="restoreText()">Genshin Impact Player</div> 
+                <div class="work">Genshin Impact Player</div>
+								<div class="">For School Project Only</div>
+            </div>
+        </section>
+    </div>
+    <section class="sec-des" id="about">
+        <div class="sec-des-left">
+            <h3>About</h3>
+            <p>
+							Hu Tao (Chinese: 胡桃 Hú Táo) is a playable Pyro character in Genshin Impact. Hu Tao's antics and eccentricity belies her role as the 77th Director of the Wangsheng Funeral Parlor and her talent as a poet. Nevertheless, she treats the parlor's operations with utmost importance, and holds funeral ceremonies with the highest dignity and solemnity.
+            </p>
+        </div>
+        <img src="https://images7.alphacoders.com/131/1316242.jpg" alt="A Photo of HuTao">
+    </section>
+    <section class="sec-des exp" id="experience">
+        <div class="sec-des-left exp-left">
+            <h3>Experience</h3>
+            <p>
+                Hu Tao may seem like all play and no work, spending every free moment on leisure and being widely considered a laissez-faire business owner. It is only during funeral ceremonies, when she personally leads her undertakers through lamp-lit alleys, that she shows her dignified and solemn side.
+						</p>
+        </div>
+        <img src="https://images7.alphacoders.com/129/1293950.jpg" alt="A Photo of HuTao">
+    </section>
+    <section class="contact" id="contact">
+        <h2>Contact</h2>
+        <p class="contact-text1">
+            Contact if want to play.
+        </p>
+        <p class="email">
+            shokojarib@gmail.com
+        </p>
+    </section>
+    <hr>
+    <footer id="footer">
+        <div class="left-nav">
+            <a class="home2" href="#home" >Home</a>
+            <a class="home2" href="#about">About</a>
+            <a class="home2" href="#experience">Experience</a>
+            <a class="home2" href="#contact">Contact</a>
+        </div>
+        <div class="right-nav">
+					<a href="#home">
+							<img src="https://upload-os-bbs.hoyolab.com/upload/2021/07/29/33019925/ff4c2fb02895c8e9ef080391bcac260b_6439594130182473016.gif" alt="Photo of Hutao">
+					</a>
+			</div>
+    </footer>
+</body>
+</html>
+
