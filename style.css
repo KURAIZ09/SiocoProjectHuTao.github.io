@@ -291,7 +291,7 @@ nav a {
     border-radius: 50%;
     border: 2px solid transparent; 
     transition: transform 0.3s, border-color 0.3s;
-    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=165534'), auto;
+    cursor: url('Hu Tao Handwriting.cur'), auto;
 }
 
 .right-nav img:hover {
@@ -367,7 +367,7 @@ nav a {
     padding: 9rem 7.5rem;
     justify-content: space-between;
     transition: background-color 0.3s ease; 
-    cursor: url('http://www.rw-designer.com/cursor-extern.php?id=165534'), auto;
+    cursor: url('Hu Tao Handwriting.cur'), auto;
 
 }
 
